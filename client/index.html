@@ -1,0 +1,36 @@
+<!doctype html>
+
+<head>
+    <title>LoopBack with Vue</title>
+</head>
+
+<body>
+    <h1>Coffeeshops</h1>
+
+    <div id="app">
+        <ul>
+            <li v-for="coffeeshop in coffeeshops">
+                <h2>{{coffeeshop.name}}</h2>
+                <p>{{coffeeshop.city}}</p>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                coffeeshops: []
+            },
+            mounted() {
+                axios.get("/api/coffeeshops").then(response => {
+                    this.coffeeshops = response.data;
+                    console.log(this.coffeeshops);
+                });
+            }
+        });
+    </script>
+</body>

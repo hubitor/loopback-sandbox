@@ -14,22 +14,32 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "sqliteDS"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "sqliteDS",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "sqliteDS",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
-    "public": false
+    "dataSource": "sqliteDS",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "sqliteDS",
     "public": false
+  },
+  "Message": {
+    "dataSource": null
+  },
+  "CoffeeShop": {
+    "dataSource": "sqliteDS",
+    "public": true
   }
 }
